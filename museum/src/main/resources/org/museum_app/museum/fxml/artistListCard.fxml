@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox stylesheets="@../css/styles.css"
+      alignment="CENTER"
+      prefWidth="145.0" spacing="12.0"
+      styleClass="form-card"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+        <ImageView fx:id="artistImage" fitHeight="145.0" fitWidth="145.0" preserveRatio="true">
+            <clip>
+                <Rectangle arcHeight="15.0" arcWidth="15.0" height="145.0" width="145.0" />
+            </clip>
+        </ImageView>
+
+        <Label fx:id="nameLabel" text="Name" style="-fx-font-weight: bold; -fx-font-size: 13px; -fx-text-fill: #1A202C;">
+            <VBox.margin>
+                <Insets bottom="10.0" left="5.0" right="5.0" />
+            </VBox.margin>
+        </Label>
+    </children>
+
+</VBox>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.TextArea?>
+
+<?import javafx.scene.control.ScrollPane?>
+<VBox fx:controller="org.museum_app.museum.view.ArtworkGUI"
+      stylesheets="@../css/styles.css"
+      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="640.0" prefWidth="360.0"
+      alignment="TOP_CENTER"
+      style="-fx-background-color: #1C1B1A;"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets left="15.0" right="15.0" />
+   </padding>
+   <children>
+      <StackPane prefHeight="350.0">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <children>
+            <ImageView fx:id="imgArtwork" fitHeight="350.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER" />
+
+            <HBox alignment="TOP_LEFT" pickOnBounds="false">
+               <children>
+                  <Button onAction="#onBack" text="← Back" styleClass="button" style="-fx-font-size: 12px; -fx-text-fill: #8A857D; -fx-background-color: transparent;" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </StackPane>
+
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox styleClass="form-card" spacing="20.0">
+               <padding>
+                  <Insets top="25.0" right="20.0" bottom="30.0" left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="-30.0" left="15.0" right="15.0" bottom="20.0"/>
+               </VBox.margin>
+
+               <children>
+                  <Label fx:id="lblTitle" text="Artwork Title" wrapText="true" style="-fx-font-family: 'Georgia', serif; -fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #1A202C;" />
+
+                  <HBox alignment="CENTER_LEFT" spacing="12.0">
+                     <children>
+                        <ImageView fx:id="imgArtist" fitHeight="60.0" fitWidth="60.0">
+                           <clip><javafx.scene.shape.Circle centerX="30" centerY="30" radius="30" /></clip>
+                        </ImageView>
+                        <VBox spacing="2.0">
+                           <Label fx:id="lblArtistName" text="Artist Name" style="-fx-font-weight: bold; -fx-font-size: 16px;" />
+                           <Label fx:id="lblGenre" text="Genre" style="-fx-opacity: 0.7;" />
+                           <Label fx:id="lblCreationYear" text="1889" style="-fx-opacity: 0.7;" />
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <VBox prefHeight="1.0" style="-fx-background-color: #D6D2C9;" />
+
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label text="About this work" style="-fx-font-weight: bold; -fx-text-fill: #1A202C;" />
+                        <Label fx:id="lblDescription" text="Long description..." wrapText="true" style="-fx-line-spacing: 5px; -fx-font-size: 15px; -fx-text-fill: #4A4641;" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox stylesheets="@../css/styles.css" fx:controller="org.museum_app.museum.view.ArtworkFormGUI"
+      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="640.0" prefWidth="360.0" spacing="15.0" style="-fx-background-color: #1C1B1A;"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="10.0" left="0.0" right="0.0" top="20.0" />
+    </padding>
+    <children>
+
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="320.0">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Button onAction="#onCancel" styleClass="button" text="Cancel" textFill="#F0EBE1" style="-fx-border-color: #555555;"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblPageTitle" styleClass="page-title" text="Edit Artwork" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#onSave" styleClass="primary-button" text="Save" />
+            </children>
+        </HBox>
+
+        <ScrollPane hbarPolicy="NEVER" vbarPolicy="ALWAYS" fitToWidth="true" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+            <content>
+                <VBox spacing="15.0">
+                    <padding>
+                        <Insets left="15.0" right="15.0" bottom="30.0" />
+                    </padding>
+                    <children>
+
+                        <VBox prefWidth="300.0" spacing="20.0" styleClass="form-card">
+                            <padding>
+                                <Insets bottom="25.0" left="15.0" right="15.0" top="25.0" />
+                            </padding>
+                            <children>
+
+                                <VBox alignment="CENTER" spacing="15.0">
+                                    <children>
+                                        <VBox alignment="CENTER" styleClass="image-card" prefHeight="130.0">
+                                            <ImageView fx:id="img1Preview" fitHeight="120.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
+                                                <clip><Rectangle arcHeight="30" arcWidth="30" width="230" height="120"/></clip>
+                                            </ImageView>
+                                        </VBox>
+                                        <TextField fx:id="tfPhoto1" promptText="URL for Photo 1" />
+                                        <Button onAction="#onBrowseImage1" styleClass="primary-button" text="Browse files for photo1" />
+
+                                        <VBox alignment="CENTER" styleClass="image-card" prefHeight="130.0">
+                                            <ImageView fx:id="img2Preview" fitHeight="120.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
+                                                <clip><Rectangle arcHeight="30" arcWidth="30" width="230" height="120"/></clip>
+                                            </ImageView>
+                                        </VBox>
+                                        <TextField fx:id="tfPhoto2" promptText="URL for Photo 2" />
+                                        <Button onAction="#onBrowseImage2" styleClass="primary-button" text="Browse files for photo2" />
+
+                                        <VBox alignment="CENTER" styleClass="image-card" prefHeight="130.0">
+                                            <ImageView fx:id="img3Preview" fitHeight="120.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
+                                                <clip><Rectangle arcHeight="30" arcWidth="30" width="230" height="120"/></clip>
+                                            </ImageView>
+                                        </VBox>
+                                        <TextField fx:id="tfPhoto3" promptText="URL for Photo 3" />
+                                        <Button onAction="#onBrowseImage3" styleClass="primary-button" text="Browse files for photo3" />
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="8.0">
+                                    <Label text="Artwork Title" style="-fx-font-weight: bold; -fx-text-fill: #1A202C;" />
+                                    <TextField fx:id="tfTitle" promptText="E.g., The Starry Night" />
+                                </VBox>
+
+                                <VBox spacing="8.0">
+                                    <Label text="Artwork creation year" style="-fx-font-weight: bold; -fx-text-fill: #1A202C;" />
+                                    <TextField fx:id="tfYear" promptText="E.g., 1989" />
+                                </VBox>
+
+                                <VBox spacing="8.0">
+                                    <Label text="Artist" style="-fx-font-weight: bold; -fx-text-fill: #1A202C;" />
+                                    <ComboBox fx:id="cbArtist" prefWidth="300.0" promptText="Select an Artist..." />
+                                </VBox>
+
+                                <VBox spacing="8.0">
+                                    <Label text="Genre" style="-fx-font-weight: bold; -fx-text-fill: #1A202C;" />
+                                    <ComboBox fx:id="cbGenre" prefWidth="300.0" promptText="Select Genre..." />
+                                </VBox>
+
+                                <VBox spacing="8.0">
+                                    <Label text="Description" style="-fx-font-weight: bold; -fx-text-fill: #1A202C;" />
+                                    <TextArea fx:id="taDescription" prefHeight="150.0" promptText="History of the piece..." wrapText="true" />
+                                </VBox>
+
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>

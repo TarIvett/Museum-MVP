@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="org.museum_app.museum.view.HomeGUI"
+      stylesheets="@../css/styles.css"
+      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="640.0" prefWidth="360.0"
+      spacing="25.0"
+      style="-fx-background-color: #1C1B1A;"
+      xmlns:fx="http://javafx.com/fxml">
+
+   <padding>
+      <Insets bottom="30.0" left="20.0" right="20.0" top="40.0" />
+   </padding>
+
+   <children>
+      <Label styleClass="page-title" text="Museum App" style="-fx-font-size: 32px;" />
+
+      <VBox spacing="10">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label text="Featured Artworks" style="-fx-text-fill: #F0EBE1; -fx-font-size: 20px; -fx-font-family: 'Georgia'; -fx-font-weight: bold;" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button onAction="#onSeeAllArtworks" text="See all" styleClass="button" style="-fx-text-fill: #8A857D; -fx-background-color: transparent;" />
+               </children>
+            </HBox>
+
+            <ScrollPane hbarPolicy="ALWAYS" vbarPolicy="NEVER" fitToWidth="false" fitToHeight="true" prefHeight="220.0" styleClass="scroll-pane">
+               <content>
+                  <HBox fx:id="artworkContainer" spacing="15.0" alignment="CENTER_LEFT">
+                     <padding>
+                        <Insets bottom="10.0" left="5.0" right="50.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+
+      <VBox spacing="10">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label text="Explore Artists" style="-fx-text-fill: #F0EBE1; -fx-font-size: 20px; -fx-font-family: 'Georgia'; -fx-font-weight: bold;" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="seeAllArtistsBtn" onAction="#onSeeAllArtists" text="See all" styleClass="button" style="-fx-font-size: 12px; -fx-text-fill: #8A857D; -fx-background-color: transparent;" />
+               </children>
+            </HBox>
+
+            <ScrollPane hbarPolicy="ALWAYS" vbarPolicy="NEVER" fitToWidth="false" fitToHeight="true" prefHeight="300.0" styleClass="scroll-pane">
+               <content>
+                  <HBox fx:id="artistContainer" prefHeight="300.0" spacing="15.0" alignment="CENTER_LEFT">
+                     <padding>
+                        <Insets bottom="10.0" left="5.0" right="30.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

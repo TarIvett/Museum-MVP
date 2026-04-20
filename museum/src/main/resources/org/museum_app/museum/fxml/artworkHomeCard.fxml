@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      style="-fx-background-color: #F0EBE1; -fx-background-radius: 15px; -fx-padding: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 30, 0, 0, 10);">
+
+    <ImageView fx:id="artworkImage" fitHeight="50" fitWidth="150" preserveRatio="true" />
+    <Label fx:id="titleLabel" style="-fx-text-fill:#1C1B1A; -fx-font-weight: bold; -fx-font-size: 14px;" />
+    <Label fx:id="artistLabel" style="-fx-text-fill: gray;" />
+
+</VBox>
